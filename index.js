@@ -3,9 +3,9 @@ var h = mercury.h;
 
 var SelectUi = require('fancy-select');
 
-module.exports = LinkedData;
+module.exports = Data;
 
-function LinkedData (options) {
+function Data (options) {
   options = options || {};
   var config = options.config || {};
 
@@ -24,12 +24,12 @@ function LinkedData (options) {
   return { state: state };
 }
 
-LinkedData.render = function _LinkedData_render (state) {
-  return h("div.ld.ui", {}, [
-    h('div.query', {}, [
-      SelectUi.render(state.query),
-    ]),
+Data.render = function _Data_render (state) {
+  return h("div.data.ui", {}, [
     h('div.controls', {}, [
+      h('div.query', {}, [
+        SelectUi.render(state.query),
+      ]),
     
     ]),
     h('div.data', {}, [

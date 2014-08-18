@@ -4,7 +4,7 @@ var RCSS = require('rcss');
 var GridUi = require('grid-ui');
 var PersonUi = require('person-ui');
 
-var LdUi = require('../');
+var DataUi = require('../');
 
 RCSS.injectAll()
 
@@ -33,7 +33,7 @@ var data = people.map(function (person) {
   }).state;
 });
 
-var ldUi = LdUi({
+var dataUi = DataUi({
   select: {
     options: selectOptions,
     value: [],
@@ -41,4 +41,4 @@ var ldUi = LdUi({
   data: data,
 });
 
-mercury.app(document.body, ldUi.state, LdUi.render);
+mercury.app(document.body, dataUi.state, DataUi.render);
