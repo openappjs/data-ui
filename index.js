@@ -9,7 +9,6 @@ function Data (options) {
   options = options || {};
   var config = options.config || {};
 
-
   var events = mercury.input([]);
 
   var data = options.data.map(function (datum) {
