@@ -34,7 +34,7 @@
     "grid-ui": "^1.0.0",
     "list-ui": "^1.0.0",
     "mercury": "^6.0.1",
-    "person-ui": "^0.1.0"
+    "person-ui": "^0.2.0"
   },
   "devDependencies": {
     "beefy": "^2.1.0",
