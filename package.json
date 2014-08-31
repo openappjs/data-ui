@@ -4,7 +4,7 @@
   "description": "Linked Data user interface",
   "main": "index.js",
   "scripts": {
-    "example": "beefy -p 5000 example/app.js",
+    "example": "beefy -d -p 5000 example/app.js",
     "test": "tape test/index.js"
   },
   "repository": {
