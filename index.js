@@ -12,11 +12,20 @@ function Data (options) {
 
   var events = mercury.input([]);
 
+  var data = options.data.map(function (datum) {
+    return options.types[datum.type]({
+      model: datum,
+    }).state;
+  });
+
   var state = mercury.struct({
     query: SelectUi(options.select).state,
-    data: mercury.array(options.data),
+    types: mercury.value(options.types),
+    data: options.viewAs({
+      model: data,
+    }).state,
+    viewAs: mercury.value(options.viewAs || require('list-ui')),
     config: mercury.struct({
-      viewAs: mercury.value(config.viewAs || null),
     }),
     events: events,
   });
@@ -33,7 +42,7 @@ Data.render = function _Data_render (state) {
     
     ]),
     h('div.data', {}, [
-    
+      state.viewAs.render(state.data),
     ]),
   ])
 };
