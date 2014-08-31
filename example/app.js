@@ -1,12 +1,9 @@
 var mercury = require('mercury');
-var RCSS = require('rcss');
 
 var GridUi = require('grid-ui');
 var PersonUi = require('person-ui');
 
 var DataUi = require('../');
-
-RCSS.injectAll()
 
 var people = [{
   id: "http://dinosaur.is#i",
