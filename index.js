@@ -1,6 +1,7 @@
 var mercury = require('mercury');
 var h = mercury.h;
 
+var Menu = require('menu-ui');
 
 module.exports = Data;
 
@@ -16,12 +17,18 @@ function Data (options) {
     }).state;
   });
 
+  var viewAs = options.viewAs || require('list-ui');
+
   var state = mercury.struct({
     types: mercury.value(options.types),
     data: options.viewAs({
       model: data,
     }).state,
-    viewAs: mercury.value(options.viewAs || require('list-ui')),
+    menus: mercury.struct({
+      viewAs: require('./menus/view-as')().state,
+      sortBy: require('./menus/sort-by')().state,
+    }),
+    viewAs: mercury.value(viewAs),
     config: mercury.struct({
     }),
     events: events,
@@ -34,6 +41,12 @@ Data.render = function _Data_render (state) {
   return h("div.data.ui", {}, [
     h('div.controls', {}, [
       h('div.query', {}, [
+      ]),
+      h('div.viewAs', {}, [
+        state.menus.viewAs.render(state.menus.viewAs)
+      ]),
+      h('div.sortBy', {}, [
+        state.menus.sortBy.render(state.menus.sortBy)
       ]),
     
     ]),
