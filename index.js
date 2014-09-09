@@ -1,7 +1,6 @@
 var mercury = require('mercury');
 var h = mercury.h;
 
-var SelectUi = require('fancy-select');
 
 module.exports = Data;
 
@@ -18,7 +17,6 @@ function Data (options) {
   });
 
   var state = mercury.struct({
-    query: SelectUi(options.select).state,
     types: mercury.value(options.types),
     data: options.viewAs({
       model: data,
@@ -36,7 +34,6 @@ Data.render = function _Data_render (state) {
   return h("div.data.ui", {}, [
     h('div.controls', {}, [
       h('div.query', {}, [
-        SelectUi.render(state.query),
       ]),
     
     ]),

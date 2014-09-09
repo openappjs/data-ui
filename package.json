@@ -30,7 +30,6 @@
   },
   "homepage": "https://github.com/openappjs/data-ui",
   "dependencies": {
-    "fancy-select": "^0.3.0",
     "grid-ui": "^1.0.0",
     "list-ui": "^1.0.0",
     "mercury": "^6.0.1",
@@ -41,6 +40,5 @@
     "cssify": "^0.6.0",
     "envify": "^3.0.0",
     "exampler": "^1.0.0"
-    "rcss": "^0.1.3"
   }
 }
