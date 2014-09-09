@@ -37,21 +37,4 @@ function Data (options) {
   return { state: state };
 }
 
-Data.render = function _Data_render (state) {
-  return h("div.data.ui", {}, [
-    h('div.controls', {}, [
-      h('div.query', {}, [
-      ]),
-      h('div.viewAs', {}, [
-        state.menus.viewAs.render(state.menus.viewAs)
-      ]),
-      h('div.sortBy', {}, [
-        state.menus.sortBy.render(state.menus.sortBy)
-      ]),
-    
-    ]),
-    h('div.data', {}, [
-      state.viewAs.render(state.data),
-    ]),
-  ])
-};
+Data.render = require('./lib/render');
