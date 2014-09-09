@@ -11,6 +11,7 @@ function Data (options) {
   var events = mercury.input([]);
 
   var state = require('./lib/state')(options, events);
+  var update = require('./lib/update')(options, state);
 
   return { state: state };
 }
